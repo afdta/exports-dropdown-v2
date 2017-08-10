@@ -61,6 +61,9 @@ state_data <- data.frame(usps=sub("\\.pdf", "", state_files), file=state_files)
 state_data <- merge(st_lookup[c("name","usps")], state_data, by="usps")
 
 final <- list(metro=metro_data, state=state_data, region=region_data)
+json <- toJSON(final)
+
+writeLines(json, "/home/alec/Projects/Brookings/export-nation/2017/all_files.json")
 
 #deprecated now that files are on CDN
 
