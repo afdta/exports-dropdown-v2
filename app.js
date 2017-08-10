@@ -3,40 +3,113 @@ function exportNationProfiles(){
 	var wrap = document.getElementById("export-nation-2017-profiles");
 		wrap.className = "c-fix";
 
-	var boxLink = document.getElementById("box-link");
+	//var boxLink = document.getElementById("box-link");
+	var rackspace = "https://c24215cec6c97b637db6-9c0895f07c3474f6636f95b6bf3db172.ssl.cf1.rackcdn.com/interactives/2017/export-nation-profiles/assets/";
 
-	var selectWrap = wrap.insertBefore(document.createElement("div"), boxLink);
-		selectWrap.className = "select-wrap";
+	var selectWrap = wrap.appendChild(document.createElement("div"));
+		selectWrap.className = "select-wrap c-fix";
 
 	var select = selectWrap.appendChild(document.createElement("select"));
-		select.style="min-width:260px;";
+		select.style="min-width:260px; padding: 5px 5px 5px 5px; float:left; font-size:15px; line-height:25px; font-family:Arial, sans;";
 
-	var firstOption = select.appendChild(document.createElement("option"));
-		firstOption.innerHTML = "Select a metro area";
-		firstOption.value = "NA";
+	var gobutton = selectWrap.appendChild(document.createElement("div"));
+		gobutton.style = "min-height:1em; width:auto; min-width:50px; background-color:#dc2a2a; float:right;";
 
-	var data = [{"Metro":"Akron, OH","Link":"https://app.box.com/s/i3b0so02qw7khfwj9ijtzphgq94ex2i4"},{"Metro":"Albany, NY","Link":"https://app.box.com/s/zhe7utx2b44azuy6t43xylduzba0imn6"},{"Metro":"Albuquerque, NM","Link":"https://app.box.com/s/hwe047jcy5thnx9vlewhmhamrtup0s3i"},{"Metro":"Allentown, PA-NJ","Link":"https://app.box.com/s/8szcbmc1dkzfondgg3g6qw5s8nzflgej"},{"Metro":"Atlanta, GA","Link":"https://app.box.com/s/vfahoja8tiuiv361rj243qq6tztfytnr"},{"Metro":"Augusta, GA-SC","Link":"https://app.box.com/s/6vx2yw4k12t9sg7lgn7a4ml4x3gz7as0"},{"Metro":"Austin, TX","Link":"https://app.box.com/s/9m39pi0hrzo9lv3ekc0cvgf0ti1csl5s"},{"Metro":"Bakersfield, CA","Link":"https://app.box.com/s/lt1lcqau0j34l6ecs34s1v0y4rfkkva2"},{"Metro":"Baltimore, MD","Link":"https://app.box.com/s/p750nl5h8x2tpdnclt68y56narnha876"},{"Metro":"Baton Rouge, LA","Link":"https://app.box.com/s/pfn09hgddkf2t7iaslkmczp76iwaart2"},{"Metro":"Birmingham, AL","Link":"https://app.box.com/s/yvzax0ux4yewqdu52bqkkywlrwmq2wc1"},{"Metro":"Boise City, ID","Link":"https://app.box.com/s/u8rwbhwsq2cmj0hjewnfinrhu6x2bulz"},{"Metro":"Boston, MA-NH","Link":"https://app.box.com/s/svgfhnmfc79i7tnq3560q7v0h564vtt1"},{"Metro":"Bridgeport, CT","Link":"https://app.box.com/s/gg8d4l8ydp1hlp5evjlc3ni5wh4231rp"},{"Metro":"Buffalo, NY","Link":"https://app.box.com/s/si65u9lgbgyw46yjk6zbto4udmcanzlr"},{"Metro":"Cape Coral, FL","Link":"https://app.box.com/s/vjrepbofxi6vffulvuxc1tjsn7uq7bl0"},{"Metro":"Charleston, SC","Link":"https://app.box.com/s/vxq50avh0fogaikxndmn7t6a24k5um6c"},{"Metro":"Charlotte, NC-SC","Link":"https://app.box.com/s/a7wxpp3rd603eyugzep4ppvejngrwuid"},{"Metro":"Chattanooga, TN-GA","Link":"https://app.box.com/s/b0gbyq8o8bxdbbzigbj3nwplq4ex51e4"},{"Metro":"Chicago, IL-IN-WI","Link":"https://app.box.com/s/kuxh2m7hivpl2cn8ulcvsz3o75rl9hui"},{"Metro":"Cincinnati, OH-KY-IN","Link":"https://app.box.com/s/h83kfyuf8wiyuewjjgl45kmp7dg6napk"},{"Metro":"Cleveland, OH","Link":"https://app.box.com/s/7k9ueijy6oci6fv3gz0lwo9xv2kq45wy"},{"Metro":"Colorado Springs, CO","Link":"https://app.box.com/s/7sklwkpt47hvjkw18v2660xi20423jab"},{"Metro":"Columbia, SC","Link":"https://app.box.com/s/5hy3kvdletjnq6m2ka0t5r5w9g5sy2tr"},{"Metro":"Columbus, OH","Link":"https://app.box.com/s/01z1crlc099ear5bnoignri6dhjnoypi"},{"Metro":"Dallas, TX","Link":"https://app.box.com/s/yocr8haqu5i6joakssjj2ly4veo551v9"},{"Metro":"Dayton, OH","Link":"https://app.box.com/s/9vja8t5vpspt3ricktvinne2sf1s2efb"},{"Metro":"Deltona, FL","Link":"https://app.box.com/s/0p16d1go51ubgcm56o97obmyapz31bqx"},{"Metro":"Denver","Link":"https://app.box.com/s/jngkfveg4cftlu6ufchraum9vfjg8lg9"},{"Metro":"Des Moines, IA","Link":"https://app.box.com/s/a4viesod7b4otjux5wfn2w4ensy1gn5n"},{"Metro":"Detroit, MI","Link":"https://app.box.com/s/y21t63awawtyksrolo9mfx8b35v522zx"},{"Metro":"El Paso, TX","Link":"https://app.box.com/s/mewhfriuxza0dzjy89crsqst5rb2eg5y"},{"Metro":"Fresno, CA","Link":"https://app.box.com/s/6cvo5iabo46qief725kmhiso8lr0n7wm"},{"Metro":"Grand Rapids, MI","Link":"https://app.box.com/s/j62xkmdbl5bi91ov0ncl7s51hzki2n3g"},{"Metro":"Greensboro, NC","Link":"https://app.box.com/s/rm7py0aazjwlmcmkqtpwv4geth2drwhz"},{"Metro":"Greenville, SC","Link":"https://app.box.com/s/afrfgbyp61qvubu9hhbizkrgy15wz0l1"},{"Metro":"Harrisburg, PA","Link":"https://app.box.com/s/nx6bwbz6kjn5wsvng7w5x146pa7uufyj"},{"Metro":"Hartford, CT","Link":"https://app.box.com/s/2k6xr1l14wglhkklayy0bbh246dgby1m"},{"Metro":"Houston, TX","Link":"https://app.box.com/s/hv0opmxx4bky9mpc4i1vche1kikqy8fa"},{"Metro":"Indianapolis, IN","Link":"https://app.box.com/s/5qi5nqcuobbj6c3luovmwrsmx92cnu3z"},{"Metro":"Jackson, MS","Link":"https://app.box.com/s/7h1w9df1o2giiddb14lsrg2b4d7t3tff"},{"Metro":"Jacksonville, FL","Link":"https://app.box.com/s/mx46991d9tgasl84mwovmqy7ruoivkl2"},{"Metro":"Kansas City, MO-KS","Link":"https://app.box.com/s/csg6suwbv8rf8d0aos9sa9kuj3gmg35x"},{"Metro":"Knoxville, TN","Link":"https://app.box.com/s/a7zff4sd133u0k1uh9dwr9e91nk1nlx2"},{"Metro":"Lakeland, FL","Link":"https://app.box.com/s/vwo6r6e4je0f5my616x4nfvo5loee59q"},{"Metro":"Las Vegas, NV","Link":"https://app.box.com/s/qrkt5ydl61buls544rwy74sqn7bvcxhd"},{"Metro":"Little Rock, AR","Link":"https://app.box.com/s/yl5x0kt1c14wlyre3jsofnwmf7lggviv"},{"Metro":"Los Angeles, CA","Link":"https://app.box.com/s/bhb0kbarjmkojr5npd4upvoq4vdmdtgs"},{"Metro":"Louisville, KY-IN","Link":"https://app.box.com/s/upg9k8n4ik2hnftiiwix4z597lnpumr0"},{"Metro":"Madison, WI","Link":"https://app.box.com/s/v9wkq1g1yvuq38w8it3ovycwa8v95aei"},{"Metro":"McAllen, TX","Link":"https://app.box.com/s/x1myzf8lq1zu3jjeygb232vlgnq5w0a1"},{"Metro":"Memphis, TN-MS-AR","Link":"https://app.box.com/s/ut9e80j8xkbch4uipqajy2x3rtyzx0ya"},{"Metro":"Miami, FL","Link":"https://app.box.com/s/o0oms83c3hobkaf3yl8dilm9taocuj8g"},{"Metro":"Milwaukee, WI","Link":"https://app.box.com/s/s31isuuenvd9saodfaaroovzh7pz3rf3"},{"Metro":"Minneapolis, MN-WI","Link":"https://app.box.com/s/h2bl4inohcj3tgy2uysls6u0qz8t60qa"},{"Metro":"Nashville, TN","Link":"https://app.box.com/s/hvbgougjji1q0yduqjuwdkgv5mc0o61i"},{"Metro":"New Haven, CT","Link":"https://app.box.com/s/g9my2scn89veejhkovpgtp9hmhh3t636"},{"Metro":"New Orleans, LA","Link":"https://app.box.com/s/ydyweu3j5crqe52gw8ri4d2bvi5yet6h"},{"Metro":"New York, NY-NJ-PA","Link":"https://app.box.com/s/amztltk6ghexgzpc1aklhxer5m3pv3gf"},{"Metro":"North Port, FL","Link":"https://app.box.com/s/447t1kf4m2c2ur45nsemexxvh53qnmua"},{"Metro":"Ogden, UT","Link":"https://app.box.com/s/4klh6lp51s7zkcbpl42v0bfabrqg26n4"},{"Metro":"Oklahoma City, OK","Link":"https://app.box.com/s/53u8r0c9l7yj1mq3dhebmedngoyjeuby"},{"Metro":"Omaha, NE-IA","Link":"https://app.box.com/s/zvkadp9rt3byf239wtvyi0x72g807qy6"},{"Metro":"Orlando, FL","Link":"https://app.box.com/s/zhe7utx2b44azuy6t43xylduzba0imn6"},{"Metro":"Oxnard, CA","Link":"https://app.box.com/s/jmcdppmzabtz1m4zbb9iozqh2f80z1bl"},{"Metro":"Palm Bay, FL","Link":"https://app.box.com/s/aterzgk2o0qsa4wc7vafiiqk1zousk20"},{"Metro":"Philadelphia, PA-NJ-DE","Link":"https://app.box.com/s/539puh7d9g2vtr71hdn4mkxtuja7zipj"},{"Metro":"Phoenix, AZ","Link":"https://app.box.com/s/4qkmmf0h9jlpfeazqjennkys7q85u65a"},{"Metro":"Pittsburgh, PA","Link":"https://app.box.com/s/6o5rkhok02x9afuw9dluid0pe1ph81a1"},{"Metro":"Portland, OR-WA","Link":"https://app.box.com/s/35xq0wcxjb3nfsc6wfaiwemrqis8vq3b"},{"Metro":"Providence, RI","Link":"https://app.box.com/s/d77uxmvezov4s9a2038r9wlk172x6a3p"},{"Metro":"Provo, UT","Link":"https://app.box.com/s/ro4o4x3jbt6yhg9yb90083znpagf4wav"},{"Metro":"Raleigh, NC","Link":"https://app.box.com/s/o2ehkxqaykybouqguskqbm4ernuc2egz"},{"Metro":"Richmond, VA","Link":"https://app.box.com/s/jc7i6k7qlk67uhbr0x0gmqbq803s4vnx"},{"Metro":"Riverside, CA","Link":"https://app.box.com/s/76bygdrcu1gk6e5th4kpwvsf73f0knyz"},{"Metro":"Rochester, NY","Link":"https://app.box.com/s/0ogsbfdjbin16e14e7hitb9dgwwu6h6r"},{"Metro":"Sacramento, CA","Link":"https://app.box.com/s/c2lniw9ft0hmqsqfzwaqgm8lxe528y6x"},{"Metro":"Salt Lake City, UT","Link":"https://app.box.com/s/wgsiaqga28ikpyg5sgjopw5kpthv7838"},{"Metro":"San Antonio, TX","Link":"https://app.box.com/s/azkaqrqp86chpvx51l41j74ga9acvqmx"},{"Metro":"San Diego, CA","Link":"https://app.box.com/s/7rpy2aim8bmnhvvsayi661kdy7bxysk9"},{"Metro":"San Francisco, CA","Link":"https://app.box.com/s/b6faqzsa063oyapv36650w50r2mk636l"},{"Metro":"San Jose, CA","Link":"https://app.box.com/s/2stq4ixcam7n5a2gj2gy8vafbhuaczdn"},{"Metro":"Scranton, PA","Link":"https://app.box.com/s/dnbjf70f0pggrvwbnfgbi7m62yo2re3q"},{"Metro":"Seattle, WA","Link":"https://app.box.com/s/otq18o53pb0qybgq1186iqwww2d44c9v"},{"Metro":"Spokane, WA","Link":"https://app.box.com/s/9sbg6x6rrradynmvc8gzizh7wwfc2eg6"},{"Metro":"Springfield, MA","Link":"https://app.box.com/s/f6t61znoum14grdefcq6u2c8s6etphrt"},{"Metro":"St. Louis - MO-IL","Link":"https://app.box.com/s/bdzugolu43uvqi28iy9l2zpy5bnywj07"},{"Metro":"Stockton, CA","Link":"https://app.box.com/s/byj4jz22lkk87nq6a0qu91b1der77vnh"},{"Metro":"Syracuse, NY","Link":"https://app.box.com/s/wkkzv29iojk9isswrmd06gcgx52ys74v"},{"Metro":"Tampa, FL","Link":"https://app.box.com/s/lzgd8hvhc3ybrilhkschpqnjtddyq961"},{"Metro":"Toledo, OH","Link":"https://app.box.com/s/2x52j7spkbc2xt6n7b3z24qolnnwe8mi"},{"Metro":"Tucson, AZ","Link":"https://app.box.com/s/3e1ccjd95b05c5g823rs9h2abyvgieyf"},{"Metro":"Tulsa, OK","Link":"https://app.box.com/s/2vzuvz58l4mn2dezvnefn5cwqpwbqkvb"},{"Metro":"Urban Honolulu, HI","Link":"https://app.box.com/s/7altonwlb0taqu964ppd6j25ztxyb4hl"},{"Metro":"Virginia Beach, VA-NC","Link":"https://app.box.com/s/rkz8gbphsq4jr2tmuk1h48gwjzrlbcqr"},{"Metro":"Washington, DC-VA-MD","Link":"https://app.box.com/s/qfusm6c255s6ojgtrrx1rjrkoqissuah"},{"Metro":"Wichita, KS","Link":"https://app.box.com/s/7rkk0mxg3tvqlvup5i200v1jgmt5p4ke"},{"Metro":"Winston-Salem, NC","Link":"https://app.box.com/s/k76faxp7iz1ztsewbzn8g8zo860xtm3x"},{"Metro":"Worcester, MA-CT","Link":"https://app.box.com/s/xi3r9292cdpwdtq7trj182xgxkljt3g9"},{"Metro":"Youngstown, OH-PA","Link":"https://app.box.com/s/tll6785bc9rkie7cvubmrvf9zdb46wnv"}];
+	var profile_link = document.createElement("a");
+		profile_link.appendChild(document.createTextNode("Download profile »"));
+		profile_link.setAttribute("target", "_blank");
+		profile_link.style = "border:none; text-decoration: none; color:#ffffff;";
+		
+	var profile_link_wrap = gobutton.appendChild(document.createElement("p"));
+		profile_link_wrap.style = "font-size:15px; padding:5px; line-height:25px; margin:0px 5px; font-family:Arial, sans;";
+
+		profile_link_wrap.appendChild(profile_link);
 
 
-	var appendOption = function(d){
-		var o = select.appendChild(document.createElement("option"));
-		o.value = d.Link;
-		o.innerHTML = d.Metro;
+	//var firstOption = select.appendChild(document.createElement("option"));
+	//	firstOption.innerHTML = "Select a profile";
+	//	firstOption.value = "NA";
+	//	firstOption.setAttribute("disabled","1");
+
+	var metro_optgroup = select.appendChild(document.createElement("optgroup"));
+		metro_optgroup.setAttribute("label","Metropolitan areas");
+	var state_optgroup = select.appendChild(document.createElement("optgroup"));
+		state_optgroup.setAttribute("label","States");
+	var region_optgroup = select.appendChild(document.createElement("optgroup"));
+		region_optgroup.setAttribute("label","U.S. and Regions");
+
+	var file_names = {"metro":[{"name":"Akron","file":"Akron.pdf"},{"name":"Albany","file":"Albany.pdf"},{"name":"Albuquerque","file":"Albuquerque.pdf"},{"name":"Allentown","file":"Allentown.pdf"},{"name":"Atlanta","file":"Atlanta.pdf"},{"name":"Augusta","file":"Augusta.pdf"},{"name":"Austin","file":"Austin.pdf"},{"name":"Bakersfield","file":"Bakersfield.pdf"},{"name":"Baltimore","file":"Baltimore.pdf"},{"name":"Baton Rouge","file":"Baton Rouge.pdf"},{"name":"Birmingham","file":"Birmingham.pdf"},{"name":"Boise City","file":"Boise City.pdf"},{"name":"Boston","file":"Boston.pdf"},{"name":"Bridgeport","file":"Bridgeport.pdf"},{"name":"Buffalo","file":"Buffalo.pdf"},{"name":"Cape Coral","file":"Cape Coral.pdf"},{"name":"Charleston","file":"Charleston.pdf"},{"name":"Charlotte","file":"Charlotte.pdf"},{"name":"Chattanooga","file":"Chattanooga.pdf"},{"name":"Chicago","file":"Chicago.pdf"},{"name":"Cincinnati","file":"Cincinnati.pdf"},{"name":"Cleveland","file":"Cleveland.pdf"},{"name":"Colorado Springs","file":"Colorado Springs.pdf"},{"name":"Columbia","file":"Columbia.pdf"},{"name":"Columbus","file":"Columbus.pdf"},{"name":"Dallas","file":"Dallas.pdf"},{"name":"Dayton","file":"Dayton.pdf"},{"name":"Deltona","file":"Deltona.pdf"},{"name":"Denver","file":"Denver.pdf"},{"name":"Des Moines","file":"Des Moines.pdf"},{"name":"Detroit","file":"Detroit.pdf"},{"name":"El Paso","file":"El Paso.pdf"},{"name":"Fresno","file":"Fresno.pdf"},{"name":"Grand Rapids","file":"Grand Rapids.pdf"},{"name":"Greensboro","file":"Greensboro.pdf"},{"name":"Greenville","file":"Greenville.pdf"},{"name":"Harrisburg","file":"Harrisburg.pdf"},{"name":"Hartford","file":"Hartford.pdf"},{"name":"Houston","file":"Houston.pdf"},{"name":"Indianapolis","file":"Indianapolis.pdf"},{"name":"Jackson","file":"Jackson.pdf"},{"name":"Jacksonville","file":"Jacksonville.pdf"},{"name":"Kansas City","file":"Kansas City.pdf"},{"name":"Knoxville","file":"Knoxville.pdf"},{"name":"Lakeland","file":"Lakeland.pdf"},{"name":"Las Vegas","file":"Las Vegas.pdf"},{"name":"Little Rock","file":"Little Rock.pdf"},{"name":"Los Angeles","file":"Los Angeles.pdf"},{"name":"Louisville","file":"Louisville.pdf"},{"name":"Madison","file":"Madison.pdf"},{"name":"McAllen","file":"McAllen.pdf"},{"name":"Memphis","file":"Memphis.pdf"},{"name":"Miami","file":"Miami.pdf"},{"name":"Milwaukee","file":"Milwaukee.pdf"},{"name":"Minneapolis","file":"Minneapolis.pdf"},{"name":"Nashville","file":"Nashville.pdf"},{"name":"New Haven","file":"New Haven.pdf"},{"name":"New Orleans","file":"New Orleans.pdf"},{"name":"New York","file":"New York.pdf"},{"name":"North Port","file":"North Port.pdf"},{"name":"Ogden","file":"Ogden.pdf"},{"name":"Oklahoma City","file":"Oklahoma City.pdf"},{"name":"Omaha","file":"Omaha.pdf"},{"name":"Orlando","file":"Orlando.pdf"},{"name":"Oxnard","file":"Oxnard.pdf"},{"name":"Palm Bay","file":"Palm Bay.pdf"},{"name":"Philadelphia","file":"Philadelphia.pdf"},{"name":"Phoenix","file":"Phoenix.pdf"},{"name":"Pittsburgh","file":"Pittsburgh.pdf"},{"name":"Portland","file":"Portland.pdf"},{"name":"Providence","file":"Providence.pdf"},{"name":"Provo","file":"Provo.pdf"},{"name":"Raleigh","file":"Raleigh.pdf"},{"name":"Richmond","file":"Richmond.pdf"},{"name":"Riverside","file":"Riverside.pdf"},{"name":"Rochester","file":"Rochester.pdf"},{"name":"Sacramento","file":"Sacramento.pdf"},{"name":"Salt Lake City","file":"Salt Lake City.pdf"},{"name":"San Antonio","file":"San Antonio.pdf"},{"name":"San Diego","file":"San Diego.pdf"},{"name":"San Francisco","file":"San Francisco.pdf"},{"name":"San Jose","file":"San Jose.pdf"},{"name":"Scranton","file":"Scranton.pdf"},{"name":"Seattle","file":"Seattle.pdf"},{"name":"Spokane","file":"Spokane.pdf"},{"name":"Springfield","file":"Springfield.pdf"},{"name":"St. Louis","file":"St. Louis.pdf"},{"name":"Stockton","file":"Stockton.pdf"},{"name":"Syracuse","file":"Syracuse.pdf"},{"name":"Tampa","file":"Tampa.pdf"},{"name":"Toledo","file":"Toledo.pdf"},{"name":"Tucson","file":"Tucson.pdf"},{"name":"Tulsa","file":"Tulsa.pdf"},{"name":"Urban Honolulu","file":"Urban Honolulu.pdf"},{"name":"Virginia Beach","file":"Virginia Beach.pdf"},{"name":"Washington","file":"Washington.pdf"},{"name":"Wichita","file":"Wichita.pdf"},{"name":"Winston-Salem","file":"Winston-Salem.pdf"},{"name":"Worcester","file":"Worcester.pdf"},{"name":"Youngstown","file":"Youngstown.pdf"}],"state":[{"usps":"AK","name":"Alaska","file":"AK.pdf"},{"usps":"AL","name":"Alabama","file":"AL.pdf"},{"usps":"AR","name":"Arkansas","file":"AR.pdf"},{"usps":"AZ","name":"Arizona","file":"AZ.pdf"},{"usps":"CA","name":"California","file":"CA.pdf"},{"usps":"CO","name":"Colorado","file":"CO.pdf"},{"usps":"CT","name":"Connecticut","file":"CT.pdf"},{"usps":"DC","name":"District of Columbia","file":"DC.pdf"},{"usps":"DE","name":"Delaware","file":"DE.pdf"},{"usps":"FL","name":"Florida","file":"FL.pdf"},{"usps":"GA","name":"Georgia","file":"GA.pdf"},{"usps":"HI","name":"Hawaii","file":"HI.pdf"},{"usps":"IA","name":"Iowa","file":"IA.pdf"},{"usps":"ID","name":"Idaho","file":"ID.pdf"},{"usps":"IL","name":"Illinois","file":"IL.pdf"},{"usps":"IN","name":"Indiana","file":"IN.pdf"},{"usps":"KS","name":"Kansas","file":"KS.pdf"},{"usps":"KY","name":"Kentucky","file":"KY.pdf"},{"usps":"LA","name":"Louisiana","file":"LA.pdf"},{"usps":"MA","name":"Massachusetts","file":"MA.pdf"},{"usps":"MD","name":"Maryland","file":"MD.pdf"},{"usps":"ME","name":"Maine","file":"ME.pdf"},{"usps":"MI","name":"Michigan","file":"MI.pdf"},{"usps":"MN","name":"Minnesota","file":"MN.pdf"},{"usps":"MO","name":"Missouri","file":"MO.pdf"},{"usps":"MS","name":"Mississippi","file":"MS.pdf"},{"usps":"MT","name":"Montana","file":"MT.pdf"},{"usps":"NC","name":"North Carolina","file":"NC.pdf"},{"usps":"ND","name":"North Dakota","file":"ND.pdf"},{"usps":"NE","name":"Nebraska","file":"NE.pdf"},{"usps":"NH","name":"New Hampshire","file":"NH.pdf"},{"usps":"NJ","name":"New Jersey","file":"NJ.pdf"},{"usps":"NM","name":"New Mexico","file":"NM.pdf"},{"usps":"NV","name":"Nevada","file":"NV.pdf"},{"usps":"NY","name":"New York","file":"NY.pdf"},{"usps":"OH","name":"Ohio","file":"OH.pdf"},{"usps":"OK","name":"Oklahoma","file":"OK.pdf"},{"usps":"OR","name":"Oregon","file":"OR.pdf"},{"usps":"PA","name":"Pennsylvania","file":"PA.pdf"},{"usps":"RI","name":"Rhode Island","file":"RI.pdf"},{"usps":"SC","name":"South Carolina","file":"SC.pdf"},{"usps":"SD","name":"South Dakota","file":"SD.pdf"},{"usps":"TN","name":"Tennessee","file":"TN.pdf"},{"usps":"TX","name":"Texas","file":"TX.pdf"},{"usps":"UT","name":"Utah","file":"UT.pdf"},{"usps":"VA","name":"Virginia","file":"VA.pdf"},{"usps":"VT","name":"Vermont","file":"VT.pdf"},{"usps":"WA","name":"Washington","file":"WA.pdf"},{"usps":"WI","name":"Wisconsin","file":"WI.pdf"},{"usps":"WV","name":"West Virginia","file":"WV.pdf"},{"usps":"WY","name":"Wyoming","file":"WY.pdf"}],"region":[{"name":"Midwest","file":"Midwest.pdf"},{"name":"Northeast","file":"Northeast.pdf"},{"name":"South","file":"South.pdf"},{"name":"United States","file":"United States.pdf"},{"name":"West","file":"West.pdf"}]};
+
+	var metros = file_names.metro;
+	var states = file_names.state;
+	var regions = file_names.region;
+
+	metros.sort(function(a,b){return a.name <= b.name ? -1 : 1;});
+	states.sort(function(a,b){return a.name <= b.name ? -1 : 1;});
+	regions.sort(function(a,b){
+		if(a.name=="United States"){
+			return 1;
+		}
+		else if(b.name=="United States"){
+			return -1;
+		}
+		else{
+			return a.name <= b.name ? -1 : 1;
+		}
+	});
+
+	var appendOption = function(d, subfolder, optgroup){
+		var o = optgroup.appendChild(document.createElement("option"));
+		o.value = encodeURI(rackspace + subfolder + "/" + d.file);
+		o.innerHTML = d.name;
+		return o.value;
 	}
 
-	var i =-1;
-	while(++i < data.length){
-		appendOption(data[i]);
+	//add metro links
+	var m =-1;
+	while(++m < metros.length){
+		if(m===0){
+			//on first one, set link
+			profile_link.setAttribute("href", appendOption(metros[m], "Metros", metro_optgroup));
+		}
+		else{
+			appendOption(metros[m], "Metros", metro_optgroup);
+		}
+	}
 
+	//add state links
+	var s =-1;
+	while(++s < states.length){
+		appendOption(states[s], "States", state_optgroup);
 	}	
+
+	//add region links
+	var r =-1;
+	while(++r < regions.length){
+		appendOption(regions[r], "US + Regions", region_optgroup);
+	}		
 
 	select.addEventListener("change", function(){
 		var val = select.value;
 		if(val !== "NA"){
-			window.open(val, "_blank");
+			//window.open(val, "_blank");
+			profile_link.setAttribute("href", val);
 		}
 	});
 
+	//make sure the "go" button fills the entire height of container
+	var go_height = 0;
+	var resize_go = function(){
+		var sw_box = selectWrap.getBoundingClientRect();
+		var sw_height = sw_box.bottom-sw_box.top;
+
+		if(sw_height != go_height){
+			go_height = sw_height;
+			gobutton.style.height = sw_height+"px";
+		}
+	}
+
+	setTimeout(resize_go, 50);
 }
 
 //on load, kick off the app
