@@ -3,7 +3,7 @@ function exportNationProfiles(){
 	var wrap = document.getElementById("export-nation-2017-profiles");
 		wrap.className = "c-fix";
 
-	var boxLink = document.getElementById("box-link"); //.style = "float:right;";
+	var boxLink = document.getElementById("box-link");
 
 	var selectWrap = wrap.insertBefore(document.createElement("div"), boxLink);
 		selectWrap.className = "select-wrap";
