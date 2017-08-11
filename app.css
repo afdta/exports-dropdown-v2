@@ -38,6 +38,7 @@
 	font-size:18px;
 	font-family:Arial, sans;
 	margin:0em;
+	color:#ffffff;
 }
 
 #export-nation-2017-profiles .go-button a{
@@ -70,13 +71,13 @@
 
 @media (min-width:980px){
 	#export-nation-2017-profiles select{
-		width:58%;
-		width:calc(60% - 10px);
+		width:48%;
+		width:calc(50% - 10px);
 	}
 
 	#export-nation-2017-profiles .go-button{
-		width:38%;
-		width:calc(40% - 10px);
+		width:48%;
+		width:calc(50% - 10px);
 	}
 
 	#export-nation-2017-profiles .go-button p{

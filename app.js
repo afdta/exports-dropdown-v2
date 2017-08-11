@@ -13,13 +13,15 @@ function exportNationProfiles(){
 	var gobutton = selectWrap.appendChild(document.createElement("div"));
 		gobutton.className = "go-button";
 
-	var profile_link = document.createElement("a");
-		profile_link.appendChild(document.createTextNode("Download profile »"));
-		profile_link.setAttribute("target", "_blank");
-		profile_link.style = "border:none; text-decoration: none; color:#ffffff;";
-		
 	var profile_link_wrap = gobutton.appendChild(document.createElement("p"));
-		profile_link_wrap.appendChild(profile_link);
+		profile_link_wrap.style = "color:#ffffff";
+		
+	var profile_link = profile_link_wrap.appendChild(document.createElement("a"));
+		profile_link.appendChild(document.createTextNode("Click here to view »"));
+		profile_link.setAttribute("target", "_blank");
+		profile_link.style = "border:none; text-decoration: none;";
+		
+
 
 	var metro_optgroup = select.appendChild(document.createElement("optgroup"));
 		metro_optgroup.setAttribute("label","Metropolitan areas");
