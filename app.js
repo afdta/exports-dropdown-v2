@@ -15,11 +15,11 @@ function exportNationProfiles(){
 
 	var profile_link_wrap = gobutton.appendChild(document.createElement("p"));
 		profile_link_wrap.style = "color:#ffffff";
-		
+
 	var profile_link = profile_link_wrap.appendChild(document.createElement("a"));
 		profile_link.appendChild(document.createTextNode("Click here to view »"));
 		profile_link.setAttribute("target", "_blank");
-		profile_link.style = "border:none; text-decoration: none;";
+		profile_link.style = "border:none; text-decoration: none; color:#ffffff;";
 		
 
 
