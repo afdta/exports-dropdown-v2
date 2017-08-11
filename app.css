@@ -44,6 +44,11 @@
 #export-nation-2017-profiles .go-button a{
 	line-height:38px;
 	vertical-align:middle;
+	color:#ffffff;
+}
+
+#export-nation-2017-profiles .go-button a span{
+	color:#ffffff;
 }
 
 .c-fix:after {
