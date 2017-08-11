@@ -1,48 +1,85 @@
+#export-nation-2017-profiles *{
+	box-sizing: border-box;
+}
+
 #export-nation-2017-profiles .select-wrap{
-	float:left;
-	border:1px solid #dc2a2a;
-	border-radius:5px;
-	min-width:420px;
+	max-width:600px;
+	width:100%;
 }
 
 #export-nation-2017-profiles select{
-	background-color:none;
-	background:none;
-	border:none;
-	outline:none;
-	margin:3px;
-}
+	
+	height:40px;
+	padding:0px 5px 0px 5px;
+	margin:0px 5px 5px 5px;
 
-#export-nation-2017-profiles .place-links{
-	width:420px;
 	float:left;
-	margin:1em;
+	font-size:18px;
+	font-family:Arial, sans;
+	display:block;
 }
 
-#export-nation-2017-profiles .collapsible{
-	width:100%;
-	height:250px;
-	transition: height 1s;
-	visibility: visible;
-	overflow:hidden;
+#export-nation-2017-profiles .go-button{
+	
+	height:40px; 
+	border:1px solid #dc2a2a;
+	padding:0px 10px;
+	margin:0px 5px 5px 5px;
+	
+	min-width:50px; 
+
+	background-color:#dc2a2a; 
+	border-radius:5px;
+
+	float:left;
 }
 
-#export-nation-2017-profiles .collapsible.closed{
-	height:0px;
-	visibility:hidden;
+#export-nation-2017-profiles .go-button p{
+	font-size:18px;
+	font-family:Arial, sans;
+	margin:0em;
 }
 
-#export-nation-2017-profiles .collapsible.open{
-	width:100%;
-	height:auto;
-	min-height:250px;
-	transition: overflow 0s 1s;
-	overflow:auto;
+#export-nation-2017-profiles .go-button a{
+	line-height:38px;
+	vertical-align:middle;
 }
-
 
 .c-fix:after {
 	clear:both;
 	content:"";
 	display:table;
+}
+
+
+@media (min-width:0px){
+	#export-nation-2017-profiles select{
+		width:98%;
+		width:calc(100% - 10px);
+	}
+
+	#export-nation-2017-profiles .go-button{
+		width:98%;
+		width:calc(100% - 10px);
+	}
+
+	#export-nation-2017-profiles .go-button p{
+		text-align:left;
+	}
+}
+
+@media (min-width:980px){
+	#export-nation-2017-profiles select{
+		width:58%;
+		width:calc(60% - 10px);
+	}
+
+	#export-nation-2017-profiles .go-button{
+		width:38%;
+		width:calc(40% - 10px);
+	}
+
+	#export-nation-2017-profiles .go-button p{
+		text-align:center;
+	}
 }

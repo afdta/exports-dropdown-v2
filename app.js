@@ -3,17 +3,15 @@ function exportNationProfiles(){
 	var wrap = document.getElementById("export-nation-2017-profiles");
 		wrap.className = "c-fix";
 
-	//var boxLink = document.getElementById("box-link");
 	var rackspace = "https://c24215cec6c97b637db6-9c0895f07c3474f6636f95b6bf3db172.ssl.cf1.rackcdn.com/interactives/2017/export-nation-profiles/assets/";
 
 	var selectWrap = wrap.appendChild(document.createElement("div"));
 		selectWrap.className = "select-wrap c-fix";
 
 	var select = selectWrap.appendChild(document.createElement("select"));
-		select.style="min-width:260px; padding: 5px 5px 5px 5px; float:left; font-size:15px; line-height:25px; font-family:Arial, sans;";
 
 	var gobutton = selectWrap.appendChild(document.createElement("div"));
-		gobutton.style = "min-height:1em; width:auto; min-width:50px; background-color:#dc2a2a; float:right;";
+		gobutton.className = "go-button";
 
 	var profile_link = document.createElement("a");
 		profile_link.appendChild(document.createTextNode("Download profile »"));
@@ -21,15 +19,7 @@ function exportNationProfiles(){
 		profile_link.style = "border:none; text-decoration: none; color:#ffffff;";
 		
 	var profile_link_wrap = gobutton.appendChild(document.createElement("p"));
-		profile_link_wrap.style = "font-size:15px; padding:5px; line-height:25px; margin:0px 5px; font-family:Arial, sans;";
-
 		profile_link_wrap.appendChild(profile_link);
-
-
-	//var firstOption = select.appendChild(document.createElement("option"));
-	//	firstOption.innerHTML = "Select a profile";
-	//	firstOption.value = "NA";
-	//	firstOption.setAttribute("disabled","1");
 
 	var metro_optgroup = select.appendChild(document.createElement("optgroup"));
 		metro_optgroup.setAttribute("label","Metropolitan areas");
@@ -98,18 +88,17 @@ function exportNationProfiles(){
 	});
 
 	//make sure the "go" button fills the entire height of container
-	var go_height = 0;
-	var resize_go = function(){
-		var sw_box = selectWrap.getBoundingClientRect();
-		var sw_height = sw_box.bottom-sw_box.top;
-
-		if(sw_height != go_height){
-			go_height = sw_height;
-			gobutton.style.height = sw_height+"px";
-		}
-	}
-
-	setTimeout(resize_go, 50);
+	//var go_height = 0;
+	//var resize_go = function(){
+	//	var sw_box = selectWrap.getBoundingClientRect();
+	//	var sw_height = sw_box.bottom-sw_box.top;
+	//
+	//	if(sw_height != go_height){
+	//		go_height = sw_height;
+	//		gobutton.style.height = sw_height+"px";
+	//	}
+	//}
+	//setTimeout(resize_go, 50);
 }
 
 //on load, kick off the app
